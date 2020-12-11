@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header> Profile information </header>
+
+    <!-- Container -->
+    <section class="container">
+        
+    </section>
+
+<script> 
+    fetch("data/data.json").then(i=>{
+        return (i.json())
+    }).then(data=>{
+        console.log(data);
+        displayData(data.profiles);
+    })
+
+    var parentElement=document.querySelector(".container");
+
+    console.log(parentElement);
+
+    function displayData(profileInfo){
+        profileInfo.map(i=>{
+            var childElement=document.createElement("article");
+
+            var name=document.createElement("h2");
+            name.textContent=i.basics.name;
+
+            var role=document.createElement("h4");
+            role.textContent=i.basics.role;
+
+            childElement.append(name);
+            childElement.append(role);
+
+            parentElement.appendChild(childElement);
+        })
+    }
+</script>
+</body>
+</html>

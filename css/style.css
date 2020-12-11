@@ -1,0 +1,18 @@
+header{
+    background: #3b54bd;
+    color: #fff;
+    padding: 1%; /* top right bottom left */
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.container>article{
+    width: 30%;
+    border: 1px solid #ddd;
+    padding: 1%;
+    margin: 1%;
+}
